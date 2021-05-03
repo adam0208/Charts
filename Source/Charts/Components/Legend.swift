@@ -35,6 +35,9 @@ open class Legend: ComponentBase
         
         /// Draw a horizontal line
         case line
+        
+        /// Draw a rounded rect
+        case rounded
     }
     
     @objc(ChartLegendHorizontalAlignment)
@@ -108,6 +111,9 @@ open class Legend: ComponentBase
     
     /// The line width for forms that consist of lines
     @objc open var formLineWidth = CGFloat(3.0)
+    
+    /// The corner radius for the rounded form
+    @objc open var formCornerRadius = 3.0
     
     /// Line dash configuration for shapes that consist of lines.
     ///

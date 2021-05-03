@@ -372,7 +372,10 @@ open class BarChartRenderer: BarLineScatterCandleBubbleRenderer
                 _barShadowRectBuffer.size.height = viewPortHandler.contentHeight
                 
                 context.setFillColor(dataSet.barShadowColor.cgColor)
-                context.fill(_barShadowRectBuffer)
+                //context.fill(_barShadowRectBuffer)
+                let path = UIBezierPath(roundedRect: _barShadowRectBuffer, byRoundingCorners: [.allCorners], cornerRadii: CGSize(width: 3.0, height: 3.0))
+                context.addPath(path.cgPath)
+                context.fillPath()
             }
         }
 
@@ -396,7 +399,10 @@ open class BarChartRenderer: BarLineScatterCandleBubbleRenderer
                 }
                 
                 context.setFillColor(dataSet.barShadowColor.cgColor)
-                context.fill(barRect)
+                //context.fill(barRect)
+                let path = UIBezierPath(roundedRect: barRect, byRoundingCorners: [.allCorners], cornerRadii: CGSize(width: 3.0, height: 3.0))
+                context.addPath(path.cgPath)
+                context.fillPath()
             }
         }
         
@@ -431,7 +437,10 @@ open class BarChartRenderer: BarLineScatterCandleBubbleRenderer
                 context.setFillColor(dataSet.color(atIndex: j).cgColor)
             }
             
-            context.fill(barRect)
+            //context.fill(barRect)
+            let path = UIBezierPath(roundedRect: barRect, byRoundingCorners: [.allCorners], cornerRadii: CGSize(width: 3.0, height: 3.0))
+            context.addPath(path.cgPath)
+            context.fillPath()
             
             if drawBorder
             {
@@ -811,7 +820,10 @@ open class BarChartRenderer: BarLineScatterCandleBubbleRenderer
                 
                 setHighlightDrawPos(highlight: high, barRect: barRect)
                 
-                context.fill(barRect)
+                //context.fill(barRect)
+                let path = UIBezierPath(roundedRect: barRect, byRoundingCorners: [.allCorners], cornerRadii: CGSize(width: 3.0, height: 3.0))
+                context.addPath(path.cgPath)
+                context.fillPath()
             }
         }
         

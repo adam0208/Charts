@@ -567,6 +567,13 @@ open class LegendRenderer: Renderer
             _formLineSegmentsBuffer[1].x = x + formSize
             _formLineSegmentsBuffer[1].y = y
             context.strokeLineSegments(between: _formLineSegmentsBuffer)
+            
+        case .rounded:
+                    
+            context.setFillColor(formColor.cgColor)
+            let path = UIBezierPath(roundedRect: CGRect(x: x, y: y - formSize / 2.0, width: formSize, height: formSize), cornerRadius: CGFloat(legend.formCornerRadius))
+            context.addPath(path.cgPath)
+            context.fillPath()
         }
     }
 

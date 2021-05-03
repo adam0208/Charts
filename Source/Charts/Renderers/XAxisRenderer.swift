@@ -75,14 +75,14 @@ open class XAxisRenderer: AxisRendererBase
         let labelSize = longest.size(withAttributes: [NSAttributedString.Key.font: xAxis.labelFont])
         
         let labelWidth = labelSize.width
-        let labelHeight = labelSize.height
+        //let labelHeight = labelSize.height
         
         let labelRotatedSize = labelSize.rotatedBy(degrees: xAxis.labelRotationAngle)
         
         xAxis.labelWidth = labelWidth
-        xAxis.labelHeight = labelHeight
+        //xAxis.labelHeight = labelHeight
         xAxis.labelRotatedWidth = labelRotatedSize.width
-        xAxis.labelRotatedHeight = labelRotatedSize.height
+        //xAxis.labelRotatedHeight = labelRotatedSize.height
     }
     
     open override func renderAxisLabels(context: CGContext)
